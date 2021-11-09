@@ -118,7 +118,7 @@ class ObstacleAvoidanceScenario(gym.Env):
         # return -0.01*np.min([self.targets[i].distanceTo(self.ego) for i in range(len(self.targets))])
         
     def _get_obs(self): # Return Current State (5 dimensional stuff)
-        return np.array([self.ego.center.x, self.ego.speed, self.ego.heading])
+        return np.array([self.ego.center.x, self.ego.center.y, self.ego.velocity.y, self.ego.velocity.x, self.ego.heading])
         
     def render(self, mode='rgb'):
         self.world.render()
