@@ -11,7 +11,7 @@ if __name__ == "__main__":
     u = (0., 0.)
     total_reward = 0.
     plot_reward = []
-    for k in range(100):
+    for k in range(10):
         total_reward = 0.
         oas.reset()
         while True:
@@ -28,5 +28,6 @@ if __name__ == "__main__":
                 print("The total reward for this episode is: ", total_reward)
                 plot_reward.append(total_reward)
                 break
+            time.sleep(dt)
     plt.plot(plot_reward)
     plt.savefig('Reward_demo')
